@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 
 // Import the AF2 Module
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 // AF2 Settings
 export const firebaseConfig = {
@@ -38,6 +39,7 @@ export const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
+    AngularFireDatabase,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
