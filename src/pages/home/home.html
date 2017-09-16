@@ -18,6 +18,13 @@
     <ion-item *ngFor="let song of songs | async" (click)="showOptions(song.$key, song.title)">
       {{song.title}}
     </ion-item>
+
+    <ion-item *ngFor="let usuario of usuarios | async" (click)="showOptions(usuario.$key, usuario.email)">
+     id: {{usuario.id}} <br>
+     usuario: {{usuario.usuario}}<br>
+     pass: {{usuario.pass}}<br>
+     email: {{usuario.email}}<br>
+    </ion-item>
   </ion-list>
 
 

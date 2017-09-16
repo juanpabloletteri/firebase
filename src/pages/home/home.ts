@@ -10,11 +10,12 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class HomePage {
 
   songs: FirebaseListObservable<any>;
-  items: FirebaseListObservable<any[]>;
+  usuarios: FirebaseListObservable<any>;
 
   constructor(public navCtrl: NavController, af: AngularFireDatabase, db: AngularFireDatabase, public alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
     this.songs = af.list('/songs');
-    this.items = db.list('/items');
+    this.usuarios = db.list('/usuarios');
+    console.log(this.usuarios);
   }
 
   addSong() {
