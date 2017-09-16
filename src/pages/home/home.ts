@@ -9,7 +9,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 })
 export class HomePage {
 
-  songs: FirebaseListObservable<any>;
+  songs: FirebaseListObservable<any[]>;
   usuarios: FirebaseListObservable<any[]>;
 
   usuario: string;
@@ -115,8 +115,8 @@ export class HomePage {
 
   verificar() {
     //let aux in this.usuarios;
-    this.usuarios.forEach(element => { console.log(element) });
-    
+    this.usuarios.forEach(element => { console.log(element, element[0], element[0].email) });
+
   }
 
 }
