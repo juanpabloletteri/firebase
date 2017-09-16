@@ -10,7 +10,10 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class HomePage {
 
   songs: FirebaseListObservable<any>;
-  usuarios: FirebaseListObservable<any>;
+  usuarios: FirebaseListObservable<any[]>;
+
+  usuario: string;
+  pass: string;
 
   constructor(public navCtrl: NavController, af: AngularFireDatabase, db: AngularFireDatabase, public alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
     this.songs = af.list('/songs');
@@ -108,6 +111,12 @@ export class HomePage {
       ]
     });
     prompt.present();
+  }
+
+  verificar() {
+    //let aux in this.usuarios;
+    this.usuarios.forEach(element => { console.log(element) });
+    
   }
 
 }

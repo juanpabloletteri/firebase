@@ -8,6 +8,18 @@
 
 <ion-content padding>
 
+  <div *ngIf="showLogin">
+    <ion-item>
+      <ion-input type="text" placeholder="Usuario" [(ngModel)]="usuario"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="pass"></ion-input>
+    </ion-item>
+  </div>
+
+  <button ion-button color="secondary" full (click)="verificar()">Verificar</button>
+
   <ion-buttons end>
     <button ion-button icon-only (click)="addSong()">
       <ion-icon name="add"></ion-icon>
