@@ -8,7 +8,7 @@
 
 <ion-content padding>
 
-  <div *ngIf="showLogin">
+  <div >
     <ion-item>
       <ion-input type="text" placeholder="Usuario" [(ngModel)]="usuario"></ion-input>
     </ion-item>
@@ -33,9 +33,10 @@
 
     <ion-item *ngFor="let usuario of usuarios | async" (click)="showOptions(usuario.$key, usuario.email)">
      id: {{usuario.id}} <br>
-     usuario: {{usuario.usuario}}<br>
-     pass: {{usuario.pass}}<br>
-     email: {{usuario.email}}<br>
+     usuario: {{usuario.nombre}}<br>
+     clave: {{usuario.clave}}<br>
+     perfil: {{usuario.perfil}}<br>
+     sexo: {{usuario.sexo}}
     </ion-item>
   </ion-list>
 

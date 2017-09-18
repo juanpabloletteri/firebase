@@ -10,10 +10,10 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 export class HomePage {
 
   songs: FirebaseListObservable<any[]>;
-  usuarios: FirebaseListObservable<any[]>;
+  usuarios: FirebaseListObservable<any>;
 
-  usuario: string;
-  pass: string;
+  usuario: string = "";
+  pass: string = "";
 
   constructor(public navCtrl: NavController, af: AngularFireDatabase, db: AngularFireDatabase, public alertCtrl: AlertController, public actionSheetCtrl: ActionSheetController) {
     this.songs = af.list('/songs');
@@ -115,7 +115,15 @@ export class HomePage {
 
   verificar() {
     //let aux in this.usuarios;
-    this.usuarios.forEach(element => { console.log(element, element[0], element[0].email) });
+    this.usuarios.forEach(element => {
+      console.log(element, element[0], element[0].nombre)
+      for (let i = 0; i < 5; i++) {
+        if (element[i].nombre == this.usuario) {
+          alert("SI");
+        }
+      }
+
+    });
 
   }
 
